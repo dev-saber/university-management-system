@@ -51,13 +51,19 @@ void updateField()
         cout << "Field not found!" << endl;
 }
 
-void displayFields(){
-    cout << "Fields: " << endl;
-    for (Field *i : fields)
+void displayFields()
+{
+    if (fields.size() == 0)
     {
-        i->display();
-        
+        cout << "No fields found!" << endl;
+        return;
     }
-    
-
+    else
+    {
+        cout << "Fields: " << endl;
+        for (Field *i : fields)
+        {
+            i->display();
+        }
+    }
 }

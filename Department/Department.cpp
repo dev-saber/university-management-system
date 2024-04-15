@@ -53,9 +53,17 @@ void updateDepartment()
 
 void displayDepartments()
 {
-    cout << "Departments: " << endl;
-    for (Department *i : departments)
+    if (departments.size() == 0)
     {
-        i->display();
+        cout << "No departments found!" << endl;
+        return;
+    }
+    else
+    {
+        cout << "Departments: " << endl;
+        for (Department *i : departments)
+        {
+            i->display();
+        }
     }
 }
