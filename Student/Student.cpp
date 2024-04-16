@@ -72,16 +72,11 @@ void updateStudent()
     auto foundStudent = find(students, id);
     if (foundStudent.has_value())
     {
-        string fName, lName, scrolarLevel;
-        cout << "Enter the new first name of the student: ";
-        cin >> fName;
-        cout << "Enter the new last name of the student: ";
-        cin >> lName;
+        string scrolarLevel;
+        foundStudent.value()->updatePerson();
         cout << "Enter the new scrolar level of the student: ";
         cin >> scrolarLevel;
 
-        foundStudent.value()->setfName(fName);
-        foundStudent.value()->setlName(lName);
         foundStudent.value()->setScrolarLevel(scrolarLevel);
 
         cout << "Enter the new field id of the student: ";

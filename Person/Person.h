@@ -22,6 +22,7 @@ public:
     void setfName(string);
     void setlName(string);
     void display();
+    void updatePerson();
 };
 
 

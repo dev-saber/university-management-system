@@ -1,6 +1,7 @@
 #include "Field/FieldMenu.cpp"
 #include "Department/DepartmentMenu.cpp"
 #include "Student/StudentMenu.cpp"
+#include "Staff/StaffMenu.cpp"
 
 
 int main()
@@ -15,6 +16,7 @@ int main()
         cout << "1. Field Menu" << endl;
         cout << "2. Department Menu" << endl;
         cout << "3. Student Menu" << endl;
+        cout << "4. Staff Menu" << endl;
         cout << "5. Exit" << endl;
         cout << "Enter your choice: ";
 
@@ -29,6 +31,9 @@ int main()
             break;
         case 3:
             StudentMenu();
+            break;
+        case 4:
+            StaffMenu();
             break;
 
         case 5:
