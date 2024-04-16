@@ -5,25 +5,23 @@ using namespace std;
 
 class Person
 {
-     template <class V, class I>
+    template <class V, class I>
     friend optional<V> find(vector<V>, I);
     template <class V, class I>
-    friend bool deleteByID(vector<V>& vector, I id);
+    friend bool deleteByID(vector<V> &vector, I id);
+
 private:
     int id;
-    string fName,lName;
+    string fName, lName;
 
 public:
     static int idd;
     Person();
-    Person(string,string);
-    Person(Person&);
+    Person(string, string);
+    Person(Person &);
     int getId();
     void setfName(string);
     void setlName(string);
     void display();
     void updatePerson();
 };
-
-
-

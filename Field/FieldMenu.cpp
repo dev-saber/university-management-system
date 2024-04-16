@@ -15,7 +15,7 @@ void  FieldMenu()
         cout << "2. Delete Field" << endl;
         cout << "3. Update Field" << endl;
         cout << "4. Display Fields" << endl;
-        cout << "6. Exit" << endl;
+        cout << "5. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice)
@@ -32,7 +32,9 @@ void  FieldMenu()
         case 4:
             displayFields();
             break;
-       
+        case 5:
+            exit = true;
+            break;
         default:
             cout << "Invalid choice" << endl;
             return;

@@ -3,6 +3,8 @@
 #include "../Department/Department.h"
 #include "../Person/Person.h"
 #include <vector>
+
+
 class Staff : public Person
 {
 private:
@@ -13,7 +15,7 @@ public:
     Staff(string, string, Department *d);
     Staff(Staff &);
     void setDepartment(Department *d);
-    void display();
+    virtual void display();
 
     // ~Staff();
 };

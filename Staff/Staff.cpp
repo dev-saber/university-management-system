@@ -1,4 +1,7 @@
+#pragma once
 #include "Staff.h"
+#include "../Teacher/Teacher.cpp"
+#include "../Admin/Admin.cpp"
 
 Staff::Staff() : Person() {}
 Staff::Staff(string f, string l, Department *d) : Person(f, l), department(d) {}
@@ -7,7 +10,9 @@ Staff::Staff(Staff &s) : Person(s), department(s.department) {}
 void addStaff()
 {
     string fName, lName;
-    int depId;
+    int depId, role;
+    cout << "Enter which profession Teacher(1) Admin(0): ";
+    cin >> role;
     cout << "Enter the first name: ";
     cin >> fName;
     cout << "Enter the last name: ";
@@ -17,7 +22,15 @@ void addStaff()
     auto dep = find(departments, depId);
     if (dep.has_value())
     {
-        staffs.push_back(new Staff(fName, lName, dep.value()));
+        if (role == 1)
+        {
+
+            staffs.push_back(new Teacher(fName, lName, dep.value()));
+        }
+        else
+        {
+            staffs.push_back(new Admin(fName, lName, dep.value()));
+        }
         cout << "Staff added successfully" << endl;
     }
     else
