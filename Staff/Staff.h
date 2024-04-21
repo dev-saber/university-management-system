@@ -4,10 +4,9 @@
 #include "../Person/Person.h"
 #include <vector>
 
-
 class Staff : public Person
 {
-private:
+protected:
     Department *department;
 
 public:

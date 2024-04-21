@@ -10,7 +10,7 @@ class Person
     template <class V, class I>
     friend bool deleteByID(vector<V> &vector, I id);
 
-private:
+protected:
     int id;
     string fName, lName;
 

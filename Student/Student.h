@@ -6,20 +6,20 @@ using namespace std;
 #include "../Person/Person.cpp"
 #include "../utils.cpp"
 
-class Student: public Person
+class Student : public Person
 {
 private:
     string scrolarLevel;
-    Field* field;
+    Field *field;
+
 public:
     Student();
-    Student(string, string, string, Field*);
-    Student(Student&);
-    void setField(Field*);
+    Student(string, string, string, Field *);
+    Student(Student &);
+    void setField(Field *);
     void setScrolarLevel(string);
     void display();
-    
     // ~Student();
 };
 
-vector<Student*> students;
+vector<Student *> students;

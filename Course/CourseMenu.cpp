@@ -24,11 +24,11 @@ void CourseMenu()
             addCourse();
             break;
         case 2:
-            deleteCourse();
-            break;
+         deleteCourse();
+         break;
         case 3:
-            updateCourse();
-            break;
+         updateCourse();
+         break;
         case 4:
             displayCourses();
             break;
