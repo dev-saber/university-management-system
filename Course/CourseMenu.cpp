@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-void  CourseMenu()
+void CourseMenu()
 {
     int choice;
     bool exit = false;
@@ -23,16 +23,16 @@ void  CourseMenu()
         case 1:
             addCourse();
             break;
-        // case 2:
-        //     deleteCourse();
-        //     break;  
-        // case 3:
-        //     updateCourse();
-        //     break;
+        case 2:
+            deleteCourse();
+            break;
+        case 3:
+            updateCourse();
+            break;
         case 4:
             displayCourses();
             break;
-       
+
         default:
             cout << "Invalid choice" << endl;
             return;

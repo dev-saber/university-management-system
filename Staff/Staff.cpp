@@ -43,6 +43,7 @@ void addStaff()
 void Staff::display()
 {
     Person::display();
+    cout << "Department:" << endl;
     department->display();
 }
 
