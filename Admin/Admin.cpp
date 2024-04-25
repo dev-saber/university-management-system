@@ -1,4 +1,6 @@
+#pragma once
 #include "Admin.h"
+
 
 Admin::Admin() : Staff() {}
 Admin::Admin(string fn, string ln, Department *d) : Staff(fn,ln,d) {}

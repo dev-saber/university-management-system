@@ -7,6 +7,6 @@ Teacher::Teacher(Teacher &t) : Staff(t) {}
 
 void Teacher::display()
 {
-    cout << "Teacher:" << endl;
+    std::cout << "Teacher:" << endl;
     Staff::display();
 }

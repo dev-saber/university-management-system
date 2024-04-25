@@ -4,7 +4,7 @@
 #include "Staff/StaffMenu.cpp"
 #include "Course/CourseMenu.cpp"
 #include "Inscription/InscriptionMenu.cpp"
-
+#include "GradeList/GradeListMenu.cpp"
 
 int main()
 {
@@ -21,6 +21,7 @@ int main()
         cout << "4. Staff Menu" << endl;
         cout << "5. Course Menu" << endl;
         cout << "6. Inscription Menu" << endl;
+        cout << "7. GradeList Menu" << endl;
         cout << "-1. Exit" << endl;
         cout << "Enter your choice: ";
 
@@ -44,6 +45,9 @@ int main()
             break;
         case 6:
             InscriptionMenu();
+            break;
+        case 7:
+            GradeListMenu();
             break;
         case -1:
             exit = true;

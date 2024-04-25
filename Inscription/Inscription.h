@@ -6,6 +6,7 @@ using namespace std;
 #include "../Student/Student.h"
 #include "../Course/Course.h"
 #include "../Staff/Staff.h"
+#include "../GradeList/GradeList.h"
 #include "../utils.cpp"
 
 class Inscription

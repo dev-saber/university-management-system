@@ -4,8 +4,6 @@ using namespace std;
 #include <algorithm>
 #include <optional>
 
-
-
 template <class V, class I>
 optional<V> find(vector<V> vector, I id)
 {

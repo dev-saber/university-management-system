@@ -23,6 +23,7 @@ public:
     string getCourseLabel();
     void setCourseTeacher(Teacher *);
     void setCourseLabel(string);
+    int getId();
     void display();
     // ~Course();
 };

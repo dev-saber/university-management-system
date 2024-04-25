@@ -1,8 +1,13 @@
+#pragma once
 #include "Course.h"
 
 int Course::idd = 0;
 Course::Course(Teacher *t, string l) : teacher(t), label(l), id(idd++) {}
 
+int Course::getId()
+{
+    return id;
+}
 Teacher *Course::getCourseTeacher()
 {
     return teacher;
@@ -25,7 +30,7 @@ void Course::setCourseLabel(string l)
 
 void Course::display()
 {
-    cout << "Course: " << label << endl;
+    cout << "Course ID: " << id << endl;
     teacher->display();
 }
 

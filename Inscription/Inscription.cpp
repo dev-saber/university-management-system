@@ -107,7 +107,12 @@ void validateInscription()
                 {
 
                     foundInscription.value()->setStatus(true);
+                    // add new instance of gradelist to the vector of gradelist
+                    
+                    grades.push_back(new GradeList(foundInscription.value()->getStudent(), foundInscription.value()->getCourse()));
                     cout << "Course updated successfully, the inscription is now confirmed!" << endl;
+                    cout << "we added a new instance of gradelist to the vector of gradelist!" << endl;
+                    cout << "you can now insert/update/delete the grades of the students in the course directly!" << endl;
                 }
                 else
                 {
