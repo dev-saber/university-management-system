@@ -25,7 +25,7 @@ public:
     GradeList(Student *, Course *);
     Student *getStudent();
     Course *getCourse();
-    vector<double> getMarks();
+    vector<double>* getMarks();
     void setMarks(double);
     void setMarks(double, int);
     void display();

@@ -75,7 +75,7 @@ void updateGradeList()
         if (foundGradeList.has_value())
         {
 
-            cout << "Would you like to append a mark or update a mark? append (0) update (1): ";
+            cout << "Would you like to append/update/delete a mark? append (0) update (1) delete (2): ";
             int choice;
             cin >> choice;
             if (choice == 0)
@@ -99,7 +99,7 @@ void updateGradeList()
             }
             else if (choice == 1)
             {
-                if (foundGradeList.value()->getMarks().size() == 0)
+                if (foundGradeList.value()->getMarks()->size() == 0)
                 {
                     cout << "No marks to update!" << endl;
                     cout << "Add a mark first!" << endl;
@@ -112,7 +112,7 @@ void updateGradeList()
                         int index;
                         cin >> index;
 
-                        if (index < 0 || index > foundGradeList.value()->getMarks().size() - 1)
+                        if (index < 0 || index > foundGradeList.value()->getMarks()->size() - 1)
                         {
                             cout << "Invalid index!" << endl;
                             continue;
@@ -127,6 +127,37 @@ void updateGradeList()
                     } while (choice == 0);
                 }
             }
+            else if (choice == 2)
+            {
+                if (foundGradeList.value()->getMarks()->size() == 0)
+                {
+                    cout << "No marks to update!" << endl;
+                    cout << "Add a mark first!" << endl;
+                }
+                else
+                {
+                    cout << "Enter the marks's index: ";
+                    int index;
+                    cin >> index;
+
+                    if (index < 0 || index > foundGradeList.value()->getMarks()->size() - 1)
+                    {
+                        cout << "Invalid index!" << endl;
+                    }
+                    else
+                    {
+                        foundGradeList.value()->getMarks()->erase(foundGradeList.value()->getMarks()->begin() + index);
+                        
+                        
+                        
+                        // auto it = marks.begin() + index;
+                        // marks.erase(it);
+
+                        cout << "Mark deleted successfully!" << endl;
+                    }
+                }
+            }
+
             else
             {
                 cout << "Invalid choice!" << endl;
@@ -140,10 +171,11 @@ void updateGradeList()
     }
 }
 
-vector<double> GradeList::getMarks()
+vector<double>* GradeList::getMarks()
 {
-    return marks;
+    return &marks;
 }
+
 void GradeList::display()
 {
     cout << "GradeList id: " << id << endl;
