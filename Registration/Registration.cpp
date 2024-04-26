@@ -1,31 +1,31 @@
-#include "Inscription.h"
+#include "Registration.h"
 
-int Inscription::idd = 0;
-Inscription::Inscription(Student *s, Course *c) : student(s), course(c), status(false), id(idd++) {}
+int Registration::idd = 0;
+Registration::Registration(Student *s, Course *c) : student(s), course(c), status(false), id(idd++) {}
 
-void Inscription::setStatus(bool s)
+void Registration::setStatus(bool s)
 {
     status = s;
 }
 
-bool Inscription::getStatus()
+bool Registration::getStatus()
 {
     return status;
 }
 
-Student *Inscription::getStudent()
+Student *Registration::getStudent()
 {
     return student;
 }
 
-Course *Inscription::getCourse()
+Course *Registration::getCourse()
 {
     return course;
 }
 
-void Inscription::display()
+void Registration::display()
 {
-    cout << "Inscription: " << id << endl;
+    cout << "Registration: " << id << endl;
     cout << "Student Information: " << endl;
     student->display();
     cout << "Course Information: " << endl;
@@ -33,7 +33,7 @@ void Inscription::display()
     cout << "Insription Status: " << (status ? "Confirmed" : "Not Confirmed") << endl;
 }
 
-void addInscription()
+void addRegistration()
 {
     int studentId;
     cout << "Enter the student's id: ";
@@ -53,45 +53,45 @@ void addInscription()
         if (foundCourse.has_value())
         {
             // Course *course = *foundCourse;
-            Inscriptions.push_back(new Inscription(foundStudent.value(), foundCourse.value()));
-            cout << "Inscription added successfully!" << endl;
+            Registrations.push_back(new Registration(foundStudent.value(), foundCourse.value()));
+            cout << "Registration added successfully!" << endl;
         }
         else
         {
             cout << "Course not found!" << endl;
-            cout << "Inscription not added!" << endl;
+            cout << "Registration not added!" << endl;
         }
     }
     else
     {
         cout << "Student not found!" << endl;
-        cout << "Inscription not added!" << endl;
+        cout << "Registration not added!" << endl;
     }
 }
 
-void displayInscriptions()
+void displayRegistrations()
 {
-    if (Inscriptions.size() == 0)
+    if (Registrations.size() == 0)
     {
-        cout << "No Inscriptions to display!" << endl;
+        cout << "No Registrations to display!" << endl;
     }
     else
     {
-        for (Inscription *inscription : Inscriptions)
+        for (Registration *Registration : Registrations)
         {
-            inscription->display();
+            Registration->display();
         }
     }
 }
 
-void validateInscription()
+void validateRegistration()
 {
     int id;
-    cout << "Enter the inscription's id: ";
+    cout << "Enter the Registration's id: ";
     cin >> id;
 
-    auto foundInscription = find(Inscriptions, id);
-    if (foundInscription.has_value())
+    auto foundRegistration = find(Registrations, id);
+    if (foundRegistration.has_value())
     {
         cout << "Enter the id of the teacher responsible for the validation: ";
         int teacherId;
@@ -103,38 +103,38 @@ void validateInscription()
             auto foundTeacher = dynamic_cast<Teacher *>(staff);
             if (foundTeacher)
             {
-                if (foundInscription.value()->getCourse()->getCourseTeacher()->getId() == foundTeacher->getId())
+                if (foundRegistration.value()->getCourse()->getCourseTeacher()->getId() == foundTeacher->getId())
                 {
 
-                    foundInscription.value()->setStatus(true);
+                    foundRegistration.value()->setStatus(true);
                     // add new instance of gradelist to the vector of gradelist
                     
-                    grades.push_back(new GradeList(foundInscription.value()->getStudent(), foundInscription.value()->getCourse()));
-                    cout << "Course updated successfully, the inscription is now confirmed!" << endl;
+                    grades.push_back(new GradeList(foundRegistration.value()->getStudent(), foundRegistration.value()->getCourse()));
+                    cout << "Course updated successfully, the Registration is now confirmed!" << endl;
                     cout << "we added a new instance of gradelist to the vector of gradelist!" << endl;
                     cout << "you can now insert/update/delete the grades of the students in the course directly!" << endl;
                 }
                 else
                 {
                     cout << "The given teacher is not responsible for the course!" << endl;
-                    cout << "Inscription not updated!" << endl;
+                    cout << "Registration not updated!" << endl;
                 }
             }
             else
             {
                 cout << "The given id is not for a teacher!" << endl;
-                cout << "Inscription not updated!" << endl;
+                cout << "Registration not updated!" << endl;
             }
         }
         else
         {
             cout << "The given id is not found!" << endl;
-            cout << "Inscription not updated!" << endl;
+            cout << "Registration not updated!" << endl;
         }
     }
     else
     {
-        cout << "Inscription not found!" << endl;
-        cout << "Inscription not validated!" << endl;
+        cout << "Registration not found!" << endl;
+        cout << "Registration not validated!" << endl;
     }
 }

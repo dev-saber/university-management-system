@@ -1,8 +1,8 @@
-#include "Inscription.cpp"
+#include "Registration.cpp"
 
 #include <stdlib.h>
 
-void InscriptionMenu()
+void RegistrationMenu()
 {
     int choice;
     bool exit = false;
@@ -10,23 +10,23 @@ void InscriptionMenu()
     {
         system("CLS");
 
-        cout << "---------------Inscription Menu-----------" << endl;
-        cout << "1. Add Inscription" << endl;
-        cout << "2. Validate Inscription" << endl;
-        cout << "3. Display Inscriptions" << endl;
+        cout << "---------------Registration Menu-----------" << endl;
+        cout << "1. Add Registration" << endl;
+        cout << "2. Validate Registration" << endl;
+        cout << "3. Display Registrations" << endl;
         cout << "4. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice)
         {
         case 1:
-            addInscription();
+            addRegistration();
             break;
         case 2:
-            validateInscription();
+            validateRegistration();
             break;
         case 3:
-            displayInscriptions();
+            displayRegistrations();
             break;
         case 4:
             exit = true;

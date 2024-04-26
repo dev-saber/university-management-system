@@ -15,14 +15,14 @@ Course *GradeList::getCourse()
 {
     return course;
 }
-void GradeList::setGrades(double grade)
+void GradeList::setMarks(double mark)
 {
-    grades.push_back(grade);
+    marks.push_back(mark);
 }
 
-void GradeList::setGrades(double grade, int index)
+void GradeList::setMarks(double mark, int index)
 {
-    grades[index] = grade;
+    marks[index] = mark;
 }
 int GradeList::getId()
 {
@@ -75,54 +75,54 @@ void updateGradeList()
         if (foundGradeList.has_value())
         {
 
-            cout << "Would you like to append a grade or update a grade? append (0) update (1): ";
+            cout << "Would you like to append a mark or update a mark? append (0) update (1): ";
             int choice;
             cin >> choice;
             if (choice == 0)
             {
-                double grade;
+                double mark;
                 int appendChoice;
                 do
                 {
-                    cout << "Enter the grade: ";
-                    cin >> grade;
-                    if (grade < 0 || grade > 20)
+                    cout << "Enter the mark: ";
+                    cin >> mark;
+                    if (mark < 0 || mark > 20)
                     {
-                        cout << "Invalid grade , grade must be between 0 and 20!" << endl;
+                        cout << "Invalid mark , mark must be between 0 and 20!" << endl;
                         continue;
                     }
-                    foundGradeList.value()->setGrades(grade);
-                    cout << "Grade appended successfully!" << endl;
-                    cout << "Do you want to append another grade? yes (0) no (1): ";
+                    foundGradeList.value()->setMarks(mark);
+                    cout << "Mark appended successfully!" << endl;
+                    cout << "Do you want to append another mark? yes (0) no (1): ";
                     cin >> appendChoice;
                 } while (appendChoice == 0);
             }
             else if (choice == 1)
             {
-                if (foundGradeList.value()->getGrades().size() == 0)
+                if (foundGradeList.value()->getMarks().size() == 0)
                 {
-                    cout << "No grades to update!" << endl;
-                    cout << "Add a grade first!" << endl;
+                    cout << "No marks to update!" << endl;
+                    cout << "Add a mark first!" << endl;
                 }
                 else
                 {
                     do
                     {
-                        cout << "Enter the grade's index: ";
+                        cout << "Enter the marks's index: ";
                         int index;
                         cin >> index;
 
-                        if (index < 0 || index > foundGradeList.value()->getGrades().size() - 1)
+                        if (index < 0 || index > foundGradeList.value()->getMarks().size() - 1)
                         {
                             cout << "Invalid index!" << endl;
                             continue;
                         }
-                        cout << "Enter the grade: ";
-                        double grade;
-                        cin >> grade;
-                        foundGradeList.value()->setGrades(grade, index);
-                        cout << "Grade updated successfully!" << endl;
-                        cout << "Do you want to update another grade? yes (0) no (1): ";
+                        cout << "Enter the mark: ";
+                        double mark;
+                        cin >> mark;
+                        foundGradeList.value()->setMarks(mark, index);
+                        cout << "Mark updated successfully!" << endl;
+                        cout << "Do you want to update another mark? yes (0) no (1): ";
                         cin >> choice;
                     } while (choice == 0);
                 }
@@ -140,25 +140,25 @@ void updateGradeList()
     }
 }
 
-vector<double> GradeList::getGrades()
+vector<double> GradeList::getMarks()
 {
-    return grades;
+    return marks;
 }
 void GradeList::display()
 {
     cout << "GradeList id: " << id << endl;
     student->display();
     course->display();
-    if (grades.size() == 0)
+    if (marks.size() == 0)
     {
-        cout << "No grades to display!" << endl;
+        cout << "No marks to display!" << endl;
     }
     else
     {
-        cout << "Grades: " << endl;
-        for (int i = 0; i < grades.size(); i++)
+        cout << "marks: " << endl;
+        for (int i = 0; i < marks.size(); i++)
         {
-            cout << "Grade " << i << ": " << grades[i] << endl;
+            cout << "Grade " << i << ": " << marks[i] << endl;
         }
     }
 }

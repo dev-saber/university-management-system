@@ -16,7 +16,7 @@ class GradeList
 private:
     Student *student;
     Course *course;
-    vector<double> grades;
+    vector<double> marks;
     int id;
 
 public:
@@ -25,9 +25,9 @@ public:
     GradeList(Student *, Course *);
     Student *getStudent();
     Course *getCourse();
-    vector<double> getGrades();
-    void setGrades(double);
-    void setGrades(double, int);
+    vector<double> getMarks();
+    void setMarks(double);
+    void setMarks(double, int);
     void display();
     int getId();
     // ~GradeList();

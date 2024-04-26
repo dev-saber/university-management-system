@@ -9,7 +9,7 @@ using namespace std;
 #include "../GradeList/GradeList.h"
 #include "../utils.cpp"
 
-class Inscription
+class Registration
 {
     template <class V, class I>
     friend optional<V> find(vector<V>, I);
@@ -21,7 +21,7 @@ private:
     bool status;
 public:
     static int idd;
-    Inscription(Student*, Course* );
+    Registration(Student*, Course* );
     void setStatus(bool );
     bool getStatus();
     Student* getStudent();
@@ -30,6 +30,6 @@ public:
     void setStudent();
     void setCourse();
 
-    // ~Inscription();
+    // ~Registration();
 };
-vector<Inscription*> Inscriptions;
+vector<Registration*> Registrations;

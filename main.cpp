@@ -3,7 +3,7 @@
 #include "Student/StudentMenu.cpp"
 #include "Staff/StaffMenu.cpp"
 #include "Course/CourseMenu.cpp"
-#include "Inscription/InscriptionMenu.cpp"
+#include "Registration/RegistrationMenu.cpp"
 #include "GradeList/GradeListMenu.cpp"
 
 int main()
@@ -20,8 +20,8 @@ int main()
         cout << "3. Student Menu" << endl;
         cout << "4. Staff Menu" << endl;
         cout << "5. Course Menu" << endl;
-        cout << "6. Inscription Menu" << endl;
-        cout << "7. GradeList Menu" << endl;
+        cout << "6. Registration Menu" << endl;
+        cout << "7. Grade List Menu" << endl;
         cout << "-1. Exit" << endl;
         cout << "Enter your choice: ";
 
@@ -44,7 +44,7 @@ int main()
             CourseMenu();
             break;
         case 6:
-            InscriptionMenu();
+            RegistrationMenu();
             break;
         case 7:
             GradeListMenu();

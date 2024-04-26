@@ -10,10 +10,10 @@ void GradeListMenu()
     {
         system("CLS");
 
-        cout << "---------------GradeList Menu-----------" << endl;
-        cout << "1. Display GradeLists" << endl;
-        cout << "2. Update GradeList" << endl;
-        cout << "3. Delete GradeList" << endl;
+        cout << "---------------Grade List Menu-----------" << endl;
+        cout << "1. Display Grade Lists" << endl;
+        cout << "2. Update Grade List" << endl;
+        cout << "3. Delete Grade List" << endl;
         cout << "4. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
