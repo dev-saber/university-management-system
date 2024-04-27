@@ -15,7 +15,8 @@ void StudentMenu()
         cout << "2. Delete Student" << endl;
         cout << "3. Update Student" << endl;
         cout << "4. Display Students" << endl;
-        cout << "5. Exit" << endl;
+        cout << "5. Advanced Search" << endl;
+        cout << "6. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice)
@@ -33,6 +34,9 @@ void StudentMenu()
             displayStudents();
             break;
         case 5:
+            customSearchStudent();
+            break;
+        case 6:
             exit = true;
             break;
         default:

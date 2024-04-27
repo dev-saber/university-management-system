@@ -1,5 +1,6 @@
+#pragma once
 #include "Student.h"
-
+#include "StudentSearch.cpp"
 Student::Student() : Person() {}
 Student::Student(string f, string l, string scrolarLevel, Field *field) : Person(f, l), scrolarLevel(scrolarLevel), field(field) {}
 Student::Student(Student &s) : Person(s), scrolarLevel(s.scrolarLevel), field(s.field) {}
@@ -111,4 +112,54 @@ void displayStudents()
             i->display();
         }
     }
+}
+
+string Student::getLastName()
+{
+    return lName;
+}
+string Student::getFirstName()
+{
+    return fName;
+}
+Field *Student::getField()
+{
+    return field;
+}
+
+void customSearchStudent()
+{
+    bool exit = false;
+    do
+    {
+        system("CLS");
+        cout << "---------------Search Student Menu-----------" << endl;
+        cout << "1. Search by id" << endl;
+        cout << "2. Search by name" << endl;
+        cout << "3. Search by field" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice: ";
+        int choice;
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            searchStudentById();
+            break;
+        case 2:
+            searchStudentByFullName();
+            break;
+        case 3:
+            searchStudentsByField();
+            break;
+        case 4:
+            exit = true;
+            return;
+        default:
+            cout << "Invalid choice" << endl;
+            return;
+        }
+        cout << "Do you want to continue? yes (0) no (1): ";
+        cin >> choice;
+    } while (exit == false);
 }
