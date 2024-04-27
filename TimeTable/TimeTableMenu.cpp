@@ -24,12 +24,12 @@ void TimeTableMenu()
         case 1:
             addTimeTable();
             break;
-        // case 2:
-        //     deleteTimeTable();
-        //     break;
-        // case 3:
-        //     updateTimeTable();
-        //     break;
+        case 2:
+            deleteTimeTable();
+            break;
+        case 3:
+            updateTimeTable();
+            break;
         case 4:
             displayTimeTables();
             break;

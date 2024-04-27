@@ -7,6 +7,7 @@ using namespace std;
 #include "../Student/Student.h"
 #include "../Staff/Staff.h"
 #include "../utils.cpp"
+#include <iomanip>
 class TimeTable
 {
     template <class V, class I>
@@ -30,6 +31,7 @@ static int idd;
     // void updateSession();
     // void setPerson(Person *);
     void setTimetable(vector<Session *>);
+    vector<Session *> getTimetable(int);
     // Person *getPerson();
 
     // ~TimeTable();

@@ -5,17 +5,6 @@ int TimeTable::idd = 0;
 TimeTable::TimeTable() : id(idd++) {}
 TimeTable::TimeTable(Person *p) : id(idd++), person(p) {}
 
-// void TimeTable::addSession()
-// {
-//     Session *s = new Session();
-//     s->setCourse(find(courses, 1).value());
-//     cout << "Enter the start time: ";
-//     cin >> s->start;
-//     cout << "Enter the end time: ";
-//     cin >> s->end;
-//     timetable[0].push_back(s);
-// }
-
 void addTimeTable()
 {
     cout << "Enter the person type (0 for student, 1 for staff): ";
@@ -57,7 +46,6 @@ void addTimeTable()
     }
     else
     {
-        cout << "person found entered the right place" << endl;
         TimeTable *t = new TimeTable(foundPerson);
 
         cout << "Insert the sessions in the timetable, from Monday to Saturday" << endl;
@@ -91,7 +79,7 @@ void addTimeTable()
                     s->setEnd(end);
                     sessions.push_back(s);
                 }
-                cout << "Do you want to add another session? (1 for yes, 0 for no): ";
+                cout << "Do you want to add another session? (0 for yes, 1 for no): ";
                 cin >> choice;
             } while (choice == 1);
             t->setTimetable(sessions);
@@ -109,7 +97,7 @@ void TimeTable::display()
 {
     cout << "TimeTable ID: " << id << endl;
     cout << "TimeTable for: " << person->getFirstName() << " " << person->getLastName() << endl;
-    // timetable vector
+    cout << "TimeTable:" << endl;
     for (int i = 0; i < timetable.size(); i++)
     {
         cout << weekDays[i] << " sessions:" << endl;
@@ -129,3 +117,101 @@ void displayTimeTables()
         timetables[i]->display();
     }
 }
+
+void updateTimeTable()
+{
+    cout << "Enter the timetable ID: ";
+    int id;
+    cin >> id;
+    auto foundTimeTable = find(timetables, id);
+    if (!foundTimeTable.has_value())
+    {
+        cout << "TimeTable not found." << endl;
+        cout << "TimeTable not updated." << endl;
+        return;
+    }
+    else
+    {
+        int day;
+        do
+        {
+            cout << "Enter the day (0 for Monday, 1 for Tuesday, 2 for Wednesday, 3 for Thursday, 4 for Friday, 5 for Saturday): ";
+            cin >> day;
+            if (day < 0 || day > 6)
+            {
+                cout << "Invalid day." << endl;
+            }
+
+        } while (day < 0 || day > 6);
+        cout << "Sessions for " << weekDays[day] << ":" << endl;
+        for (Session *i : foundTimeTable.value()->getTimetable(day))
+        {
+            i->display();
+        }
+
+        int sessionID;
+        int keepGoing;
+        do
+        {
+            cout << "Enter the session ID you want to update: ";
+            cin >> sessionID;
+            auto foundSession = find(foundTimeTable.value()->getTimetable(day), sessionID);
+            if (!foundSession.has_value())
+            {
+                cout << "Session not found." << endl;
+                cout << "Session not updated." << endl;
+                return;
+            }
+            else
+            {
+                cout << "Enter the course ID: ";
+                int id;
+                cin >> id;
+                auto foundCourse = find(courses, id);
+                if (!foundCourse.has_value())
+                {
+                    cout << "Course not found." << endl;
+                    cout << "Session not updated." << endl;
+                    return;
+                }
+                else
+                {
+                    foundSession.value()->setCourse(foundCourse.value());
+                    cout << "Enter the start time: ";
+                    string start, end;
+                    cin >> start;
+                    foundSession.value()->setStart(start);
+                    cout << "Enter the end time: ";
+                    cin >> end;
+                    foundSession.value()->setEnd(end);
+                    cout << "Session updated successfully!" << endl;
+                }
+                
+            }
+
+            cout << "Do you want to update another session? (0 for yes, 1 for no): ";
+            cin >> keepGoing;
+
+        } while (keepGoing == 0);
+        cout << "TimeTable updated successfully!" << endl;
+    }
+}
+
+vector<Session *> TimeTable::getTimetable(int day)
+{
+    return timetable[day];
+}
+
+void deleteTimeTable()
+{
+    int id;
+    cout << "Enter timetable id you want to delete: ";
+    cin >> id;
+    bool deleted = deleteByID(timetables, id);
+    if (deleted)
+        cout << "TimeTable deleted successfully!" << endl;
+    else
+        cout << "TimeTable not found!" << endl;
+}
+
+// delete session later
