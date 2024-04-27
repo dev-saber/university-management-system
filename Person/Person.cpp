@@ -31,3 +31,13 @@ void Person::updatePerson()
     cout << "Enter the new last name: ";
     cin >> lName;
 }
+
+string Person::getLastName()
+{
+    return lName;
+}
+
+string Person::getFirstName()
+{
+    return fName;
+}

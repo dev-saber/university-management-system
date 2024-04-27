@@ -22,6 +22,8 @@ public:
     int getId();
     void setfName(string);
     void setlName(string);
+    string getLastName();
+    string getFirstName();
     void display();
     void updatePerson();
 };

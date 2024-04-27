@@ -7,6 +7,8 @@
 #include "GradeList/GradeListMenu.cpp"
 #include "Absence/AbsenceMenu.cpp"
 
+#include "TimeTable/TimeTableMenu.cpp"
+
 int main()
 {
     int choice;
@@ -24,6 +26,8 @@ int main()
         cout << "6. Registration Menu" << endl;
         cout << "7. Grade List Menu" << endl;
         cout << "8. Absence Menu" << endl;
+        cout << "9. Session Menu" << endl;
+        cout << "10. TimeTable Menu" << endl;
         cout << "-1. Exit" << endl;
         cout << "Enter your choice: ";
 
@@ -53,6 +57,10 @@ int main()
             break;
         case 8:
             AbsenceMenu();
+            break;
+
+        case 10:
+            TimeTableMenu();
             break;
         case -1:
             exit = true;

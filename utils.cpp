@@ -21,7 +21,7 @@ optional<V> find(vector<V> vector, I id)
 };
 
 template <class V, class I>
-bool deleteByID(vector<V>& vector, I id)
+bool deleteByID(vector<V> &vector, I id)
 {
     auto it = find_if(vector.begin(), vector.end(), [id](const V &obj)
                       { return obj->id == id; });
@@ -31,8 +31,7 @@ bool deleteByID(vector<V>& vector, I id)
         vector.erase(it);
         return true;
     }
-   return false;
+    return false;
 };
 
-
-
+string weekDays[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
