@@ -3,6 +3,7 @@
 #include "../Teacher/Teacher.cpp"
 #include "../Admin/Admin.cpp"
 #include "StaffSearch.cpp"
+#include "../Person/PersonSearch.cpp"
 
 Staff::Staff() : Person() {}
 Staff::Staff(string f, string l, Department *d) : Person(f, l), department(d) {}
@@ -130,7 +131,7 @@ void customSearchStaff()
         switch (choice)
         {
         case 1:
-            searchStaffById();
+            PersonSearch(staffs);
             break;
         case 2:
             searchStaffByFullName();

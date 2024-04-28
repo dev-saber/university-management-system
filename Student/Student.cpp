@@ -1,6 +1,7 @@
 #pragma once
 #include "Student.h"
 #include "StudentSearch.cpp"
+#include "../Person/PersonSearch.cpp"
 
 Student::Student() : Person() {}
 Student::Student(string f, string l, string scrolarLevel, Field *field) : Person(f, l), scrolarLevel(scrolarLevel), field(field) {}
@@ -145,7 +146,7 @@ void customSearchStudent()
         switch (choice)
         {
         case 1:
-            searchStudentById();
+            PersonSearch(staffs);
             break;
         case 2:
             searchStudentByFullName();
