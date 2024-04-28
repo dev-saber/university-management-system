@@ -1,6 +1,7 @@
 #pragma once
 #include "Student.h"
 #include "StudentSearch.cpp"
+
 Student::Student() : Person() {}
 Student::Student(string f, string l, string scrolarLevel, Field *field) : Person(f, l), scrolarLevel(scrolarLevel), field(field) {}
 Student::Student(Student &s) : Person(s), scrolarLevel(s.scrolarLevel), field(s.field) {}

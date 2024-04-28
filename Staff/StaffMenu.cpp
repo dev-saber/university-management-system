@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-void  StaffMenu()
+void StaffMenu()
 {
     int choice;
     bool exit = false;
@@ -15,7 +15,8 @@ void  StaffMenu()
         cout << "2. Delete Staff" << endl;
         cout << "3. Update Staff" << endl;
         cout << "4. Display Staffs" << endl;
-        cout << "5. Exit" << endl;
+        cout << "5. Advanced Search" << endl;
+        cout << "6. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice)
@@ -25,7 +26,7 @@ void  StaffMenu()
             break;
         case 2:
             deleteStaff();
-            break;  
+            break;
         case 3:
             updateStaff();
             break;
@@ -33,6 +34,9 @@ void  StaffMenu()
             displayStaff();
             break;
         case 5:
+            customSearchStaff();
+            break;
+        case 6:
             exit = true;
             break;
         default:

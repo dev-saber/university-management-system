@@ -2,6 +2,7 @@
 #include "Staff.h"
 #include "../Teacher/Teacher.cpp"
 #include "../Admin/Admin.cpp"
+#include "StaffSearch.cpp"
 
 Staff::Staff() : Person() {}
 Staff::Staff(string f, string l, Department *d) : Person(f, l), department(d) {}
@@ -103,4 +104,49 @@ void updateStaff()
     {
         cout << "Staff not found" << endl;
     }
+}
+
+Department *Staff::getDepartment()
+{
+    return department;
+}
+
+void customSearchStaff()
+{
+    bool exit = false;
+
+    do
+    {
+        system("CLS");
+        cout << "---------------Search Staff Menu-----------" << endl;
+        cout << "1. Search by id" << endl;
+        cout << "2. Search by name" << endl;
+        cout << "3. Search by department" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            searchStaffById();
+            break;
+        case 2:
+            searchStaffByFullName();
+            break;
+        case 3:
+            searchStaffsByDepartment();
+            break;
+        case 4:
+            exit = true;
+            return;
+        default:
+            cout << "Invalid choice" << endl;
+            return;
+        }
+
+        cout << "Do you want to continue? yes (0) no (1): ";
+        cin >> choice;
+    } while (exit == false);
 }
