@@ -25,14 +25,9 @@ static int idd;
     TimeTable();
     TimeTable(Person *);
     void display();
-    // Session *getSession(int);
-    // void addSession();
-    // void removeSession();
-    // void updateSession();
-    // void setPerson(Person *);
     void setTimetable(vector<Session *>);
     vector<Session *> getTimetable(int);
-    // Person *getPerson();
+    vector<Session *>& getTimetable(int , int);
 
     // ~TimeTable();
 };

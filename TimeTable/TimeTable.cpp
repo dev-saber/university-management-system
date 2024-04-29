@@ -164,35 +164,48 @@ void updateTimeTable()
             }
             else
             {
-                cout << "Enter the course ID: ";
-                int id;
-                cin >> id;
-                auto foundCourse = find(courses, id);
-                if (!foundCourse.has_value())
+                int choice;
+                cout << "Do you want to update this session's course or delete this session? (0 for update, 1 for delete): ";
+                cin >> choice;
+                if (choice == 1)
                 {
-                    cout << "Course not found." << endl;
-                    cout << "Session not updated." << endl;
-                    return;
+                    bool deleted = deleteByID(foundTimeTable.value()->getTimetable(day, 0), sessionID);
+                    if (deleted)
+                        cout << "Session deleted successfully!" << endl;
+                    else
+                        cout << "Session not found!" << endl;
                 }
-                else
+                else if (choice == 0)
                 {
-                    foundSession.value()->setCourse(foundCourse.value());
-                    cout << "Enter the start time: ";
-                    string start, end;
-                    cin >> start;
-                    foundSession.value()->setStart(start);
-                    cout << "Enter the end time: ";
-                    cin >> end;
-                    foundSession.value()->setEnd(end);
-                    cout << "Session updated successfully!" << endl;
+                    cout << "Enter the course ID: ";
+                    int id;
+                    cin >> id;
+                    auto foundCourse = find(courses, id);
+                    if (!foundCourse.has_value())
+                    {
+                        cout << "Course not found." << endl;
+                        cout << "Session not updated." << endl;
+                        return;
+                    }
+                    else
+                    {
+                        foundSession.value()->setCourse(foundCourse.value());
+                        cout << "Enter the start time: ";
+                        string start, end;
+                        cin >> start;
+                        foundSession.value()->setStart(start);
+                        cout << "Enter the end time: ";
+                        cin >> end;
+                        foundSession.value()->setEnd(end);
+                        cout << "Session updated successfully!" << endl;
+                    }
                 }
-                
             }
 
-            cout << "Do you want to update another session? (0 for yes, 1 for no): ";
+            cout << "Do you want to update/delete another session? (0 for yes, 1 for no): ";
             cin >> keepGoing;
 
-        } while (keepGoing == 0);
+        } while (keepGoing == 1);
         cout << "TimeTable updated successfully!" << endl;
     }
 }
@@ -214,4 +227,7 @@ void deleteTimeTable()
         cout << "TimeTable not found!" << endl;
 }
 
-// delete session later
+vector<Session *> &TimeTable::getTimetable(int day, int d)
+{
+    return timetable[day];
+}
