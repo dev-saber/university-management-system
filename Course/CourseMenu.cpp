@@ -15,6 +15,7 @@ void CourseMenu()
         cout << "2. Delete Course" << endl;
         cout << "3. Update Course" << endl;
         cout << "4. Display Courses" << endl;
+        cout << "5. Advanced Search" << endl;
         cout << "6. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
@@ -31,6 +32,9 @@ void CourseMenu()
          break;
         case 4:
             displayCourses();
+            break;
+        case 5:
+            customSearchCourse();
             break;
 
         default:

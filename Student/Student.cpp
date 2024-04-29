@@ -146,10 +146,10 @@ void customSearchStudent()
         switch (choice)
         {
         case 1:
-            PersonSearch(staffs);
+            idSearch(students);
             break;
         case 2:
-            searchStudentByFullName();
+            searchByFullName(students);
             break;
         case 3:
             searchStudentsByField();

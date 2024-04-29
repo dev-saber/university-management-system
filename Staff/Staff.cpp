@@ -131,10 +131,10 @@ void customSearchStaff()
         switch (choice)
         {
         case 1:
-            PersonSearch(staffs);
+            idSearch(staffs);
             break;
         case 2:
-            searchStaffByFullName();
+            searchByFullName(staffs);
             break;
         case 3:
             searchStaffsByDepartment();

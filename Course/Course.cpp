@@ -1,5 +1,6 @@
 #pragma once
 #include "Course.h"
+#include "CourseSearch.cpp"
 
 int Course::idd = 0;
 Course::Course(Teacher *t, string l) : teacher(t), label(l), id(idd++) {}
@@ -148,4 +149,37 @@ void deleteCourse()
     {
         cout << "Course not found" << endl;
     }
+}
+
+void customSearchCourse()
+{
+    bool exit = false;
+    do
+    {
+        system("CLS");
+        cout << "---------------Search Course Menu-----------" << endl;
+        cout << "1. Search by id" << endl;
+        cout << "2. Search by department" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+        int choice;
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            idSearch(courses);
+            break;
+        case 2:
+            searchCourseByDepartment();
+            break;
+        case 3:
+            exit = true;
+            return;
+        default:
+            cout << "Invalid choice" << endl;
+            return;
+        }
+        cout << "Do you want to continue? yes (0) no (1): ";
+        cin >> choice;
+    } while (exit == false);
 }

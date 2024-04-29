@@ -3,19 +3,24 @@
 using namespace std;
 
 template <class T>
-void PersonSearch(vector<T> v)
+void searchByFullName(vector<T> v)
 {
-   int id;
-    cout << "Enter the ID of the person you want to search: ";
-    cin >> id;
-    auto foundPerson = find(v, id);
-    if (foundPerson.has_value())
+    string fName, lName;
+    cout << "Enter the first name of the person you want to search: ";
+    cin >> fName;
+    cout << "Enter the last name of the person you want to search: ";
+    cin >> lName;
+    bool found = false;
+    for (T i : v)
     {
-        foundPerson.value()->display();
+        if (i->getFirstName() == fName && i->getLastName() == lName)
+        {
+            found = true;
+            i->display();
+        }
     }
-    else
+    if (!found)
     {
-        cout << "Person not found!" << endl;
+        cout << "Person with this name not found!" << endl;
     }
-   
 };
