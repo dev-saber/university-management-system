@@ -102,10 +102,17 @@ void TimeTable::display()
     {
         cout << weekDays[i] << " sessions:" << endl;
         // session vector
-        for (int j = 0; j < timetable[i].size(); j++)
+        if (timetable[i].size() == 0)
         {
-            // session object
-            timetable[i][j]->display();
+            cout << "No sessions to display" << endl;
+        }
+        else
+        {
+            for (int j = 0; j < timetable[i].size(); j++)
+            {
+                // session object
+                timetable[i][j]->display();
+            }
         }
     }
 }
