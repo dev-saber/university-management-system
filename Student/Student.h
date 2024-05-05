@@ -20,7 +20,6 @@ public:
     void setScrolarLevel(string);
     void display();
     Field *getField();
-    string getScrolarLevel();
 };
 
 vector<Student *> students;

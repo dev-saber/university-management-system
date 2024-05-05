@@ -27,6 +27,4 @@ public:
     void setCourse(Course *);
     void setStart(string);
     void setEnd(string);
-   
-    // ~Session();
 };

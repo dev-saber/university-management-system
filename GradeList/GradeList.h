@@ -30,6 +30,5 @@ public:
     void setMarks(double, int);
     void display();
     int getId();
-    // ~GradeList();
 };
 vector<GradeList *> grades;

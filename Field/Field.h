@@ -5,8 +5,6 @@ using namespace std;
 #include "../Entity/Entity.cpp"
 class Field : public Entity
 {
-private:
-    
 public:
     Field();
     Field(string);

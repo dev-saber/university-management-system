@@ -17,7 +17,6 @@ public:
     Department *getDepartment();
     void setDepartment(Department *d);
     virtual void display();
-
 };
 
 vector<Staff *> staffs;

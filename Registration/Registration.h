@@ -27,9 +27,5 @@ public:
     Student* getStudent();
     Course* getCourse();
     void display();
-    void setStudent();
-    void setCourse();
-
-    // ~Registration();
 };
 vector<Registration*> Registrations;
