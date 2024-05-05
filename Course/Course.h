@@ -25,6 +25,5 @@ public:
     void setCourseLabel(string);
     int getId();
     void display();
-    // ~Course();
 };
 vector<Course *> courses;

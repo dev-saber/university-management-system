@@ -12,7 +12,6 @@ public:
     Teacher(string, string, Department *d);
     Teacher(Teacher &);
     void display();
-    // ~Teacher();
 };
 
 

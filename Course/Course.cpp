@@ -32,6 +32,7 @@ void Course::setCourseLabel(string l)
 void Course::display()
 {
     cout << "Course ID: " << id << endl;
+    cout << "Course Label: " << label << endl;
     teacher->display();
 }
 
@@ -51,8 +52,6 @@ void addCourse()
         auto foundTeacher = dynamic_cast<Teacher *>(staff);
         if (foundTeacher)
         {
-            // cout << "Found teacher!" << endl;
-            // foundTeacher->display();
             string l;
             cout << "Enter the course label: ";
             cin >> l;
@@ -134,7 +133,7 @@ void updateCourse()
         cout << "Course not found" << endl;
     }
 }
-// add cehcking for the course id if it exist in other classes no need to delete it from the vector
+
 void deleteCourse()
 {
     int id;

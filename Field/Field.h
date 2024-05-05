@@ -11,8 +11,6 @@ public:
     Field();
     Field(string);
     Field(Field&);
-
-    // ~Field();
 };
 
 vector<Field*> fields;

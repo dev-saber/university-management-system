@@ -10,7 +10,6 @@ public:
     Department();
     Department(string);
     Department(Department&);
-    // ~Department();
 };
 
 vector<Department*> departments;

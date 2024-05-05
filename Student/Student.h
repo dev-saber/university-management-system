@@ -19,12 +19,8 @@ public:
     void setField(Field *);
     void setScrolarLevel(string);
     void display();
-    string getLastName();
-    string getFirstName();
     Field *getField();
     string getScrolarLevel();
-    
-    // ~Student();
 };
 
 vector<Student *> students;

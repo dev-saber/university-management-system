@@ -23,6 +23,4 @@ public:
     int getId();
     void setLabel(string);
     void display();
-
-    // ~Entity();
 };

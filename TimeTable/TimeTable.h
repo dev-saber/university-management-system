@@ -27,10 +27,8 @@ static int idd;
     void display();
     void setTimetable(vector<Session *>);
     vector<Session *> getTimetable(int);
-    // overload just to get the reference in order to delete the session swhen needed
+    // overload just to get the reference in order to delete the session when needed
     vector<Session *>& getTimetable(int , int);
-
-    // ~TimeTable();
 };
 
 vector<TimeTable *> timetables;

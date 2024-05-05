@@ -9,5 +9,4 @@ public:
     Admin(string, string, Department *d);
     Admin(Admin &);
     void display();
-    // ~Admin : public Staff();
 };

@@ -212,7 +212,7 @@ void updateTimeTable()
             cout << "Do you want to update/delete another session? (0 for yes, 1 for no): ";
             cin >> keepGoing;
 
-        } while (keepGoing == 1);
+        } while (keepGoing == 0);
         cout << "TimeTable updated successfully!" << endl;
     }
 }

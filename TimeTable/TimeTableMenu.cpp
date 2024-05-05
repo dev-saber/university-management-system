@@ -15,7 +15,6 @@ void TimeTableMenu()
         cout << "2. Delete TimeTable" << endl;
         cout << "3. Update TimeTable" << endl;
         cout << "4. Display TimeTables" << endl;
-        cout << "5. Advanced Search" << endl;
         cout << "6. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
@@ -33,9 +32,6 @@ void TimeTableMenu()
         case 4:
             displayTimeTables();
             break;
-        // case 5:
-        //     customSearchTimeTable();
-        //     break;
         case 6:
             exit = true;
             break;

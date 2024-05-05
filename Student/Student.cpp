@@ -116,14 +116,6 @@ void displayStudents()
     }
 }
 
-string Student::getLastName()
-{
-    return lName;
-}
-string Student::getFirstName()
-{
-    return fName;
-}
 Field *Student::getField()
 {
     return field;
